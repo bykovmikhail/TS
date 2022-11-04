@@ -9,6 +9,7 @@
 	--bg-about: rgb(212, 210, 210);
 	--header-footer: rgb(50, 78, 50);
 	--body-color: rgb(25, 45, 25);
+	
 	--header-footer-color: rgb(255, 255, 255);
 	--block-padding: 5px;
 	--block-margin: 20px;
@@ -58,7 +59,7 @@ body {
 .header__row {
 	display: flex;
 	align-items: center;
-	
+
 	/* border: 3px solid red; */
 }
 .header__title {
@@ -75,6 +76,25 @@ body {
 }
 .main {
 	flex: 1 1 auto;
+}
+.main__contacts {
+	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:end;
+	background-color: var(--bg-about);
+}
+.main__contacts a{
+	margin-right: var(--block-margin);
+	padding: var(--block-padding);
+	font-size: var(--paragraph-fz);
+	color: var(--body-color);
+	
+}
+.main__contacts a:hover{
+	text-decoration: underline;
+	color:rgb(82, 133, 82) ;
+	transition: 0.5s;
 }
 .about {
 	padding: var(--block-padding);
@@ -123,16 +143,25 @@ body {
 	display: flex;
 	align-items: center;
 	margin-right: var(--block-margin);
-	border: 1px solid rgb(231, 231, 231);
+	/* border: 1px solid rgb(231, 231, 231); */
+	/* border: 2px solid red; */
 }
-.purchasing__item:last-child {
+.purchasing__item p {
+	padding: var(--block-padding);
+	font-size: var(--paragraph-fz);
+	text-align: center;
+}
+.purchasing__block {
+	border: 1px solid rgb(231, 231, 231);
+	margin-right: var(--block-margin);
+}
+.purchasing__block-last {
 	margin-right: 0;
 }
+
 .purchasing__img {
 	width: 300px;
-	height: 200px;
-	
-
+	height: 100px;
 }
 .purchasing__img img {
 	width: 100%;
@@ -173,6 +202,7 @@ body {
 	display: block;
 	
 }
+
 .possibilities__img {
 	/* border: 2px solid red; */
 	width: 200px;
@@ -196,13 +226,15 @@ body {
 	.purchasing__block {
 		margin-bottom: var(--block-margin);
 	}
+	.purchasing__block-one {
+		margin-right: 0;
+	}
 }
-
 @media (max-width: 768px) {
 	.about__row {
 		display: block;
 		width: 100%;
-		border: 2px solid red;
+		
 	}
 	.about__text {
 		width: 100%;
@@ -225,10 +257,17 @@ body {
 	.purchasing__item {
 		display: block;
 	}
-	.item__img {
+	.purchasing__img {
+		margin: 0 auto;
+		width: 150px;
+	}
+	.purchasing__block-prev {
+		margin-right: 0;
+	}
+	/* .item__img {
 		display: block;
 		margin: 0 auto;
-	}
+	} */
 }
 
 @media (max-width: 481px) {
@@ -245,9 +284,13 @@ body {
 	.header {
 		height: 60px;
 	}
+	.main__contacts a{
+		
+		color: var(--paragraph-fz-min);
+		font-weight: 400;
+	}
 	.about__row {
 		display: block;
-		/* border: 2px solid black; */
 	}
 	.about__title {
 		font-size: var(--title-h2-fz-min);
@@ -258,7 +301,6 @@ body {
 	}
 	.about__text {
 		width: 100%;
-		/* border: 2px solid black; */
 	}
 	.about__text p {
 		font-size: var(--paragraph-fz-min);
